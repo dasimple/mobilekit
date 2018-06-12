@@ -1,1 +1,5 @@
 bin/
+Unity/mobilekit/Library
+Unity/mobilekit/ProjectSettings
+Unity/mobilekit/Temp
+Unity/mobilekit/UnityPackageManager

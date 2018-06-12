@@ -27,7 +27,7 @@ public final class Store
 {
 	private static final String DATABASE_NAME = "dasimple-store.db";
 	private static final String SOOMLA_NAME = "store.kv.db";
-	private static final String OBFUSCATION_PASSWORD = ""; //Set by default, for more secure...
+	private static final String OBFUSCATION_PASSWORD = "SAMPLE_OBFUSCATION_PASSWORD"; //Set by default, for more secure...
 	private static final String COLUMN_NAME = "name";
 
 	private static Context context = null;

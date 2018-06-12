@@ -73,7 +73,7 @@ public final class GooglePlay
 	public static final String PURCHASE_INVALID = "PURCHASE_INVALID";
 	public static final String PURCHASE_UNKNOWN = "PURCHASE_UNKNOWN";
 
-	private static final String BASE64_PUBLIC_KEY = ""; //Set by default, for more secure...
+	private static final String BASE64_PUBLIC_KEY = "SAMPLE_BASE64_PUBLIC_KEY"; //Set by default, for more secure...
 	private static final boolean ASYNC = true;
 
 	private static boolean connected = false;
