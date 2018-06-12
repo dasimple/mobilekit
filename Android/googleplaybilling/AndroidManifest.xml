@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.dasimple.mobilekit.billing" android:versionCode="1" android:versionName="1.0.0">
+
+    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="25" />
+    
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <application>
+        
+        <activity android:name="com.dasimple.mobilekit.billing.GooglePlayPurchaseActivity" />
+        
+    </application>
+
+</manifest>
