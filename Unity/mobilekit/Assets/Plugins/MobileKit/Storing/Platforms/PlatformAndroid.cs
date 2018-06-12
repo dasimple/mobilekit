@@ -66,11 +66,11 @@ namespace MobileKit.Storing.Platforms
 			string columnsJSON = columns.ToJSON().ToString();
 			string whereJSON = where != null ? where.ToJSON().ToString() : "";
 			string recordsJSON = native.CallStatic<string>("get", collection, columnsJSON, whereJSON, limit < 0 ? null : limit + "");
-			JSON recordsJSON = JSON.Parse(recordsJSON);
-			StoreDictionary[] records = new StoreDictionary[recordsJSON.length];
+			JSON recordsArray = JSON.Parse(recordsJSON);
+			StoreDictionary[] records = new StoreDictionary[recordsArray.length];
 			for(int i = 0; i < records.Length; i++)
 			{
-				records[i] = new StoreDictionary(recordsJSON[i]);
+				records[i] = new StoreDictionary(recordsArray[i]);
 			}
 			return records;
 		}
@@ -81,11 +81,11 @@ namespace MobileKit.Storing.Platforms
 			string columnsJSON = columns.ToJSON().ToString();
 			string whereJSON = where != null ? where.ToJSON().ToString() : "";
 			string recordsJSON = native.CallStatic<string>("get", collection, columnsJSON, whereJSON, limit < 0 ? null : limit + "");
-			JSON recordsJSON = JSON.Parse(recordsJSON);
-			string[] records = new string[recordsJSON.length];
+			JSON recordsArray = JSON.Parse(recordsJSON);
+			string[] records = new string[recordsArray.length];
 			for(int i = 0; i < records.Length; i++)
 			{
-				records[i] = recordsJSON[i];
+				records[i] = recordsArray[i].stringValue;
 			}
 			return records;
 		}
