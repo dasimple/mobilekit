@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace DaSimple.MobileKit.Storing
+namespace MobileKit.Storing
 {
 	internal class StoreEvents : MonoBehaviour
 	{

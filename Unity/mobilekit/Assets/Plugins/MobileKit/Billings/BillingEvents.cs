@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace DaSimple.MobileKit.Billings
+namespace MobileKit.Billings
 {
 	internal class BillingEvents : MonoBehaviour
 	{

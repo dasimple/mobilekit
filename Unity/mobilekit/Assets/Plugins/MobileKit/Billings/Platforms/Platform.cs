@@ -1,6 +1,6 @@
 using System;
 
-namespace DaSimple.MobileKit.Billings.Platforms
+namespace MobileKit.Billings.Platforms
 {
 	public abstract class Platform
 	{

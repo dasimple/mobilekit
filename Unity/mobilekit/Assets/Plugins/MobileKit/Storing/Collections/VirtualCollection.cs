@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace DaSimple.MobileKit.Storing.Collections
+namespace MobileKit.Storing.Collections
 {
 	public abstract class VirtualCollection
 	{

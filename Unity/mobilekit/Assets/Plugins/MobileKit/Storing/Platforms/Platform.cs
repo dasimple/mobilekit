@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DaSimple.MobileKit.Storing.Platforms
+namespace MobileKit.Storing.Platforms
 {
 	public abstract class Platform
 	{

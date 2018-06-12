@@ -1,7 +1,7 @@
 ﻿#if UNITY_EDITOR
 using UnityEngine;
 
-namespace DaSimple.MobileKit.Billings.Platforms
+namespace MobileKit.Billings.Platforms
 {
 	public class PlatformEditor : Platform
 	{

@@ -1,7 +1,7 @@
 ﻿using UnityEngine.Events;
-using DaSimple.MobileKit.Billings.Platforms;
+using MobileKit.Billings.Platforms;
 
-namespace DaSimple.MobileKit.Billings
+namespace MobileKit.Billings
 {
 	public static class Billing
 	{

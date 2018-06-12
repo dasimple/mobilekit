@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DaSimple.MobileKit.Storing.Collections
+namespace MobileKit.Storing.Collections
 {
 	public sealed class InsufficientBalanceException : Exception
 	{
