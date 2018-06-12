@@ -1,0 +1,236 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		72CA17691F916799005D1824 /* Bridge.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 72CA17661F916799005D1824 /* Bridge.h */; };
+		72CA179F1F916AF4005D1824 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CA17671F916799005D1824 /* Bridge.m */; };
+		72E43A96201CDAD900443CA3 /* UnityBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72E43A95201CDAD900443CA3 /* UnityBridge.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		72CA17611F916799005D1824 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				72CA17691F916799005D1824 /* Bridge.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		72CA17631F916799005D1824 /* libBridge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBridge.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		72CA17661F916799005D1824 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		72CA17671F916799005D1824 /* Bridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
+		72CA179E1F916A69005D1824 /* UnitySendMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitySendMessage.h; path = Unity/UnitySendMessage.h; sourceTree = "<group>"; };
+		72E43A95201CDAD900443CA3 /* UnityBridge.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = UnityBridge.mm; path = Unity/UnityBridge.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		72CA17601F916799005D1824 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		72CA175A1F916799005D1824 = {
+			isa = PBXGroup;
+			children = (
+				72CA17651F916799005D1824 /* Bridge */,
+				72CA17641F916799005D1824 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		72CA17641F916799005D1824 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				72CA17631F916799005D1824 /* libBridge.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		72CA17651F916799005D1824 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				72CA179D1F916A55005D1824 /* Unity */,
+				72CA17661F916799005D1824 /* Bridge.h */,
+				72CA17671F916799005D1824 /* Bridge.m */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
+		72CA179D1F916A55005D1824 /* Unity */ = {
+			isa = PBXGroup;
+			children = (
+				72CA179E1F916A69005D1824 /* UnitySendMessage.h */,
+				72E43A95201CDAD900443CA3 /* UnityBridge.mm */,
+			);
+			name = Unity;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		72CA17621F916799005D1824 /* Bridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72CA176C1F916799005D1824 /* Build configuration list for PBXNativeTarget "Bridge" */;
+			buildPhases = (
+				72CA175F1F916799005D1824 /* Sources */,
+				72CA17601F916799005D1824 /* Frameworks */,
+				72CA17611F916799005D1824 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bridge;
+			productName = Bridge;
+			productReference = 72CA17631F916799005D1824 /* libBridge.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		72CA175B1F916799005D1824 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = DaSimple;
+				TargetAttributes = {
+					72CA17621F916799005D1824 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 72CA175E1F916799005D1824 /* Build configuration list for PBXProject "Bridge" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 72CA175A1F916799005D1824;
+			productRefGroup = 72CA17641F916799005D1824 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				72CA17621F916799005D1824 /* Bridge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		72CA175F1F916799005D1824 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72E43A96201CDAD900443CA3 /* UnityBridge.mm in Sources */,
+				72CA179F1F916AF4005D1824 /* Bridge.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		72CA176B1F916799005D1824 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		72CA176E1F916799005D1824 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XTX8999M6;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_CFLAGS = "-fembed-bitcode";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphonesimulator;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = iphonesimulator;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		72CA175E1F916799005D1824 /* Build configuration list for PBXProject "Bridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72CA176B1F916799005D1824 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72CA176C1F916799005D1824 /* Build configuration list for PBXNativeTarget "Bridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72CA176E1F916799005D1824 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 72CA175B1F916799005D1824 /* Project object */;
+}

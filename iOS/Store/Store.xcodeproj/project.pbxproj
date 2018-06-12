@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		72CA177D1F9167CC005D1824 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CA177C1F9167CC005D1824 /* Store.m */; };
+		72CA17A31F916B9D005D1824 /* SQLiteDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CA17981F9168CE005D1824 /* SQLiteDatabase.m */; };
+		72CA17A41F916BA4005D1824 /* Store.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 72CA177B1F9167CC005D1824 /* Store.h */; };
+		72CA17AA1F921D23005D1824 /* Cursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CA17A91F921D23005D1824 /* Cursor.m */; };
+		72CA17B31F952F17005D1824 /* DatabaseFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CA17B21F952F17005D1824 /* DatabaseFunctions.m */; };
+		72CA17C21F956D38005D1824 /* FBEncryptorAES.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CA17C11F956D38005D1824 /* FBEncryptorAES.m */; };
+		72CA17C51F956D46005D1824 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CA17C41F956D46005D1824 /* NSData+Base64.m */; };
+		72CA17C81F956DEA005D1824 /* AESObfuscator.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CA17C71F956DEA005D1824 /* AESObfuscator.m */; };
+		72CA17CC1F96B40F005D1824 /* SQLiteStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CA17CB1F96B40F005D1824 /* SQLiteStatement.m */; };
+		72CA17CF1F977A5F005D1824 /* UnityStore.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72CA17CE1F977A5F005D1824 /* UnityStore.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		72CA17761F9167CC005D1824 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				72CA17A41F916BA4005D1824 /* Store.h in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		72CA17781F9167CC005D1824 /* libStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		72CA177B1F9167CC005D1824 /* Store.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
+		72CA177C1F9167CC005D1824 /* Store.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+		72CA17971F9168CE005D1824 /* SQLiteDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLiteDatabase.h; sourceTree = "<group>"; };
+		72CA17981F9168CE005D1824 /* SQLiteDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLiteDatabase.m; sourceTree = "<group>"; };
+		72CA17A81F921D23005D1824 /* Cursor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cursor.h; sourceTree = "<group>"; };
+		72CA17A91F921D23005D1824 /* Cursor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cursor.m; sourceTree = "<group>"; };
+		72CA17AE1F92B7B8005D1824 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
+		72CA17B11F952F17005D1824 /* DatabaseFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatabaseFunctions.h; sourceTree = "<group>"; };
+		72CA17B21F952F17005D1824 /* DatabaseFunctions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatabaseFunctions.m; sourceTree = "<group>"; };
+		72CA17C01F956D38005D1824 /* FBEncryptorAES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBEncryptorAES.h; sourceTree = "<group>"; };
+		72CA17C11F956D38005D1824 /* FBEncryptorAES.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBEncryptorAES.m; sourceTree = "<group>"; };
+		72CA17C31F956D46005D1824 /* NSData+Base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		72CA17C41F956D46005D1824 /* NSData+Base64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		72CA17C61F956DEA005D1824 /* AESObfuscator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESObfuscator.h; sourceTree = "<group>"; };
+		72CA17C71F956DEA005D1824 /* AESObfuscator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AESObfuscator.m; sourceTree = "<group>"; };
+		72CA17CA1F96B40F005D1824 /* SQLiteStatement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLiteStatement.h; sourceTree = "<group>"; };
+		72CA17CB1F96B40F005D1824 /* SQLiteStatement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLiteStatement.m; sourceTree = "<group>"; };
+		72CA17CE1F977A5F005D1824 /* UnityStore.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UnityStore.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		72CA17751F9167CC005D1824 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		72CA176F1F9167CC005D1824 = {
+			isa = PBXGroup;
+			children = (
+				72CA177A1F9167CC005D1824 /* Store */,
+				72CA17791F9167CC005D1824 /* Products */,
+				72CA17A51F917BF6005D1824 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		72CA17791F9167CC005D1824 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				72CA17781F9167CC005D1824 /* libStore.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		72CA177A1F9167CC005D1824 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				72CA17CD1F977A48005D1824 /* Unity */,
+				72CA17C91F9576B6005D1824 /* Encryptor */,
+				72CA17B01F951293005D1824 /* Util */,
+				72CA17961F9168BA005D1824 /* SQLite */,
+				72CA177B1F9167CC005D1824 /* Store.h */,
+				72CA177C1F9167CC005D1824 /* Store.m */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		72CA17961F9168BA005D1824 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				72CA17971F9168CE005D1824 /* SQLiteDatabase.h */,
+				72CA17981F9168CE005D1824 /* SQLiteDatabase.m */,
+				72CA17A81F921D23005D1824 /* Cursor.h */,
+				72CA17A91F921D23005D1824 /* Cursor.m */,
+				72CA17CA1F96B40F005D1824 /* SQLiteStatement.h */,
+				72CA17CB1F96B40F005D1824 /* SQLiteStatement.m */,
+			);
+			path = SQLite;
+			sourceTree = "<group>";
+		};
+		72CA17A51F917BF6005D1824 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72CA17AE1F92B7B8005D1824 /* libsqlite3.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72CA17B01F951293005D1824 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				72CA17B11F952F17005D1824 /* DatabaseFunctions.h */,
+				72CA17B21F952F17005D1824 /* DatabaseFunctions.m */,
+				72CA17C61F956DEA005D1824 /* AESObfuscator.h */,
+				72CA17C71F956DEA005D1824 /* AESObfuscator.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		72CA17C91F9576B6005D1824 /* Encryptor */ = {
+			isa = PBXGroup;
+			children = (
+				72CA17C01F956D38005D1824 /* FBEncryptorAES.h */,
+				72CA17C11F956D38005D1824 /* FBEncryptorAES.m */,
+				72CA17C31F956D46005D1824 /* NSData+Base64.h */,
+				72CA17C41F956D46005D1824 /* NSData+Base64.m */,
+			);
+			path = Encryptor;
+			sourceTree = "<group>";
+		};
+		72CA17CD1F977A48005D1824 /* Unity */ = {
+			isa = PBXGroup;
+			children = (
+				72CA17CE1F977A5F005D1824 /* UnityStore.mm */,
+			);
+			path = Unity;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		72CA17771F9167CC005D1824 /* Store */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72CA17811F9167CC005D1824 /* Build configuration list for PBXNativeTarget "Store" */;
+			buildPhases = (
+				72CA17741F9167CC005D1824 /* Sources */,
+				72CA17751F9167CC005D1824 /* Frameworks */,
+				72CA17761F9167CC005D1824 /* Copy Files */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Store;
+			productName = Store;
+			productReference = 72CA17781F9167CC005D1824 /* libStore.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		72CA17701F9167CC005D1824 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = DaSimple;
+				TargetAttributes = {
+					72CA17771F9167CC005D1824 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 72CA17731F9167CC005D1824 /* Build configuration list for PBXProject "Store" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 72CA176F1F9167CC005D1824;
+			productRefGroup = 72CA17791F9167CC005D1824 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				72CA17771F9167CC005D1824 /* Store */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		72CA17741F9167CC005D1824 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72CA17C21F956D38005D1824 /* FBEncryptorAES.m in Sources */,
+				72CA17C51F956D46005D1824 /* NSData+Base64.m in Sources */,
+				72CA17C81F956DEA005D1824 /* AESObfuscator.m in Sources */,
+				72CA17A31F916B9D005D1824 /* SQLiteDatabase.m in Sources */,
+				72CA17CC1F96B40F005D1824 /* SQLiteStatement.m in Sources */,
+				72CA17AA1F921D23005D1824 /* Cursor.m in Sources */,
+				72CA17B31F952F17005D1824 /* DatabaseFunctions.m in Sources */,
+				72CA177D1F9167CC005D1824 /* Store.m in Sources */,
+				72CA17CF1F977A5F005D1824 /* UnityStore.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		72CA17801F9167CC005D1824 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Users/andreidigori/Library/Developer/Xcode/DerivedData/Bridge-glkperjemdpvzscttgdzrcudfwva/Build/Products/Release-iphoneos/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		72CA17831F9167CC005D1824 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XTX8999M6;
+				OTHER_CFLAGS = "-fembed-bitcode";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphonesimulator;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = iphonesimulator;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		72CA17731F9167CC005D1824 /* Build configuration list for PBXProject "Store" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72CA17801F9167CC005D1824 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72CA17811F9167CC005D1824 /* Build configuration list for PBXNativeTarget "Store" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72CA17831F9167CC005D1824 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 72CA17701F9167CC005D1824 /* Project object */;
+}
