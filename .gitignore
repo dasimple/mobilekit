@@ -1,5 +1,5 @@
 .DS_Store
-bin/
+Android/*/bin/
 Unity/mobilekit/Library
 Unity/mobilekit/ProjectSettings
 Unity/mobilekit/Temp
