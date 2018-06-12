@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace MobileKit.Storing.Platforms
+namespace DaSimple.MobileKit.Storing.Platforms
 {
 	public class PlatformEditor : Platform
 	{

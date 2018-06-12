@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MobileKit.Storing.Collections
+namespace DaSimple.MobileKit.Storing.Collections
 {
 	public abstract class Lifetimes : Countables32
 	{

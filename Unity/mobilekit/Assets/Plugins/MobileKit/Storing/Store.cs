@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine.Events;
-using MobileKit.Storing.Platforms;
+using DaSimple.MobileKit.Storing.Platforms;
 
-namespace MobileKit.Storing
+namespace DaSimple.MobileKit.Storing
 {
 	public static class Store
 	{

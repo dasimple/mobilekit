@@ -1,7 +1,7 @@
 ﻿#if UNITY_IOS
 using System.Runtime.InteropServices;
 
-namespace MobileKit.Storing.Platforms
+namespace DaSimple.MobileKit.Storing.Platforms
 {
 	public class PlatformiOS : Platform
 	{

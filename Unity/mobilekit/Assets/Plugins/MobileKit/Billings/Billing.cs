@@ -1,7 +1,7 @@
 ﻿using UnityEngine.Events;
-using MobileKit.Billings.Platforms;
+using DaSimple.MobileKit.Billings.Platforms;
 
-namespace MobileKit.Billings
+namespace DaSimple.MobileKit.Billings
 {
 	public static class Billing
 	{
@@ -16,9 +16,9 @@ namespace MobileKit.Billings
 		public static UnityAction OnConnect = delegate {};
 		public static UnityAction<string> OnConnectFail = delegate {};
 		public static UnityAction OnDisconnect = delegate {};
-		public static UnityAction<JSON> OnProductsDetailsLoad = delegate {};
-		public static UnityAction<JSON> OnPurchasesLoad = delegate {};
-		public static UnityAction<JSON> OnPurchaseHistoryLoad = delegate {};
+		public static UnityAction<string> OnProductsDetailsLoad = delegate {};
+		public static UnityAction<string> OnPurchasesLoad = delegate {};
+		public static UnityAction<string> OnPurchaseHistoryLoad = delegate {};
 		public static UnityAction OnPurchaseStart = delegate {};
 		public static UnityAction<string> OnPurchaseFail = delegate {};
 		public static UnityAction<string> OnPurchaseComplete = delegate {};

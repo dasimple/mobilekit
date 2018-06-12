@@ -3,8 +3,8 @@ using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 
-//namespace EarthExplore
-//{
+namespace DaSimple
+{
 	public class JSONException : Exception
 	{
 		public JSONException(string message) : base("JSON: " + message)
@@ -1068,4 +1068,4 @@ using System.Collections.Generic;
 			return "null";
 		}
 	}
-//}
+}

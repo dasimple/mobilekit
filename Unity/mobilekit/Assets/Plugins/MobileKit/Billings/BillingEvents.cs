@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace MobileKit.Billings
+namespace DaSimple.MobileKit.Billings
 {
 	internal class BillingEvents : MonoBehaviour
 	{
@@ -48,43 +48,19 @@ namespace MobileKit.Billings
 			Billing.OnDisconnect.Invoke();
 		}
 
-		public static void ProductsDetailsLoad(string resultJSON)
+		public static void ProductsDetailsLoad(string response)
 		{
-			try
-			{
-				JSON result = JSON.Parse(resultJSON);
-				Billing.OnProductsDetailsLoad.Invoke(result);
-			}
-			catch (JSONException)
-			{
-
-			}
+			Billing.OnProductsDetailsLoad.Invoke(response);
 		}
 
-		public static void PurchasesLoad(string resultJSON)
+		public static void PurchasesLoad(string response)
 		{
-			try
-			{
-				JSON result = JSON.Parse(resultJSON);
-				Billing.OnPurchasesLoad.Invoke(result);
-			}
-			catch (JSONException)
-			{
-
-			}
+			Billing.OnPurchasesLoad.Invoke(response);
 		}
 
-		public static void PurchaseHistoryLoad(string resultJSON)
+		public static void PurchaseHistoryLoad(string response)
 		{
-			try
-			{
-				JSON result = JSON.Parse(resultJSON);
-				Billing.OnPurchaseHistoryLoad.Invoke(result);
-			}
-			catch (JSONException)
-			{
-
-			}
+			Billing.OnPurchaseHistoryLoad.Invoke(response);
 		}
 
 		public static void PurchaseStart()

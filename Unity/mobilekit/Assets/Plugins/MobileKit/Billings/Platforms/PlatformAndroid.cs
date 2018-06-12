@@ -1,7 +1,7 @@
 ﻿#if UNITY_ANDROID
 using UnityEngine;
 
-namespace MobileKit.Billings.Platforms
+namespace DaSimple.MobileKit.Billings.Platforms
 {
 	public class PlatformAndroid : Platform
 	{

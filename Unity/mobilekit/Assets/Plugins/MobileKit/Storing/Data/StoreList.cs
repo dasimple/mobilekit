@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MobileKit.Storing
+namespace DaSimple.MobileKit.Storing
 {
 	public class StoreList : List<string>
 	{
