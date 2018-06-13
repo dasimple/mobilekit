@@ -1,6 +1,6 @@
-﻿using WaterSlap.Collections;
+﻿using MobileKit.Storing.Collections;
 
-namespace WaterSlap
+namespace MobileKit.Storing
 {
 	public static class KeyValues
 	{

@@ -1,8 +1,6 @@
 using System.Collections.Generic;
-using MobileKit.Storing;
-using MobileKit.Storing.Collections;
 
-namespace WaterSlap.Collections
+namespace MobileKit.Storing.Collections
 {
 	public sealed class KeyValueCollection : VirtualCollection
 	{
