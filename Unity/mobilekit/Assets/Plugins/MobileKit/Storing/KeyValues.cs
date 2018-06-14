@@ -1,4 +1,4 @@
-﻿using MobileKit.Storing.Collections;
+﻿﻿using MobileKit.Storing.Collections;
 
 namespace MobileKit.Storing
 {
@@ -23,42 +23,46 @@ namespace MobileKit.Storing
 		public static string Get(string name, string fallback = null)
 		{
 			string value = collection.Get(name);
-			if(value == null)
-			{
-				value = fallback;
-			}
-			return value;
+			return value == null ? fallback : value;
 		}
 
 		public static int GetAsInt(string name, int fallback = 0)
 		{
 			int value = fallback;
-			int.TryParse(Get(name), out value);
+			string rawValue = Get(name);
+			if(!string.IsNullOrEmpty(rawValue))
+			{
+				int.TryParse(rawValue, out value);
+			}
 			return value;
 		}
 
 		public static long GetAsLong(string name, long fallback = 0)
 		{
 			long value = fallback;
-			long.TryParse(Get(name), out value);
+			string rawValue = Get(name);
+			if(!string.IsNullOrEmpty(rawValue))
+			{
+				long.TryParse(rawValue, out value);
+			}
 			return value;
 		}
 
 		public static float GetAsFloat(string name, float fallback = 0f)
 		{
 			float value = fallback;
-			float.TryParse(Get(name), out value);
+			string rawValue = Get(name);
+			if(!string.IsNullOrEmpty(rawValue))
+			{
+				float.TryParse(rawValue, out value);
+			}
 			return value;
 		}
 
 		public static bool GetAsBool(string name, bool fallback = false)
 		{
-			string value = Get(name);
-			if(value == null)
-			{
-				return fallback;
-			}
-			return value == "1";
+			string rawValue = Get(name);
+			return rawValue == null ? fallback : rawValue == "1";
 		}
 
 		/* Set */
