@@ -13,10 +13,8 @@ namespace MobileKit.Storing
 		public static UnityAction<int, int> OnDatabaseUpgrade = delegate {};
 		public static UnityAction OnDatabaseOpen = delegate {};
 		public static UnityAction OnDatabaseClose = delegate {};
-
 		private static bool isInitialized = false;
 		private static Platform cachedPlatform = null;
-
 		public static Platform platform
 		{
 			get
@@ -39,62 +37,50 @@ namespace MobileKit.Storing
 				return cachedPlatform;
 			}
 		}
-
 		public static void Connect()
 		{
 			platform.Connect();
 		}
-
 		public static void Disconnect()
 		{
 			platform.Disconnect();
 		}
-
 		public static void Open(int version)
 		{
 			platform.Open(version);
 		}
-
 		public static void Close()
 		{
 			platform.Close();
 		}
-
 		public static void Reset()
 		{
 			platform.Reset();
 		}
-
 		public static bool CreateCollection(string name, StoreList columns)
 		{
 			return platform.CreateCollection(name, columns);
 		}
-
 		public static bool DestroyCollection(string name)
 		{
 			return platform.DestroyCollection(name);
 		}
-
-		public static int Add(string collection, StoreDictionary[] records)
+		public static int Add(string collection, IEnumerable<StoreDictionary> records)
 		{
 			return platform.Add(collection, records);
 		}
-
-		public static StoreDictionary[] Get(string collection, StoreList columns, StoreDictionary where, int limit)
+		public static IEnumerable<StoreDictionary> Get(string collection, StoreList columns, StoreDictionary where, int limit)
 		{
 			return platform.Get(collection, columns, where, limit);
 		}
-
-		public static string[] Get(string collection, string column, StoreDictionary where, int limit)
+		public static IEnumerable<string> Get(string collection, string column, StoreDictionary where, int limit)
 		{
 			return platform.Get(collection, column, where, limit);
 		}
-
 		public static int Set(string collection, StoreDictionary columns, StoreDictionary where)
 		{
 			return platform.Set(collection, columns, where);
 		}
-
 		public static int Remove(string collection, StoreDictionary where)
 		{
 			return platform.Remove(collection, where);

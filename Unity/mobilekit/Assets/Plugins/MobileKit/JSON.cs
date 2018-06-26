@@ -12,7 +12,6 @@ namespace MobileKit
 
 		}
 	}
-
 	public class JSON : IEnumerable<string>
 	{
 		public enum Type
@@ -24,7 +23,6 @@ namespace MobileKit
 			Boolean,
 			Null
 		}
-
 		public static JSON Clone(JSON copy)
 		{
 			if(copy == null)
@@ -54,7 +52,6 @@ namespace MobileKit
 			}
 			return new JSON(copy.rawValue);
 		}
-
 		public static JSON Parse(string encoded)
 		{
 			if(string.IsNullOrEmpty(encoded))
@@ -301,7 +298,6 @@ namespace MobileKit
 			}
 			throw new JSONException("Parse error." + json);
 		}
-
 		public static string Escape(string value)
 		{
 			StringBuilder builder = new StringBuilder();
@@ -364,33 +360,26 @@ namespace MobileKit
 			}
 			return builder.ToString();
 		}
-
 		public static implicit operator JSON(string value)
 		{
 			return new JSON(value);
 		}
-
 		public static implicit operator JSON(int value)
 		{
 			return new JSON(value);
 		}
-
 		public static implicit operator JSON(float value)
 		{
 			return new JSON(value);
 		}
-
 		public static implicit operator JSON(bool value)
 		{
 			return new JSON(value);
 		}
-
 		public Type type = Type.Null;
-
 		private string rawValue = "";
 		private Dictionary<string, JSON> dictionary = null;
 		private List<JSON> list = null;
-
 		public JSON(Type type = Type.Null)
 		{
 			switch(type)
@@ -408,32 +397,26 @@ namespace MobileKit
 			}
 			this.type = type;
 		}
-
 		public JSON(string value) : this(Type.String)
 		{
 			stringValue = value;
 		}
-
 		public JSON(float value) : this(Type.Number)
 		{
 			floatValue = value;
 		}
-
 		public JSON(int value) : this(Type.Number)
 		{
 			intValue = value;
 		}
-
 		public JSON(long value) : this(Type.Number)
 		{
 			longValue = value;
 		}
-
 		public JSON(bool value) : this(Type.Boolean)
 		{
 			booleanValue = value;
 		}
-
 		public bool isString
 		{
 			get
@@ -441,7 +424,6 @@ namespace MobileKit
 				return type == Type.String;
 			}
 		}
-
 		public bool isNumber
 		{
 			get
@@ -449,7 +431,6 @@ namespace MobileKit
 				return type == Type.Number;
 			}
 		}
-
 		public bool isObject
 		{
 			get
@@ -457,7 +438,6 @@ namespace MobileKit
 				return type == Type.Object;
 			}
 		}
-
 		public bool isArray
 		{
 			get
@@ -465,7 +445,6 @@ namespace MobileKit
 				return type == Type.Array;
 			}
 		}
-
 		public bool isBoolean
 		{
 			get
@@ -473,7 +452,6 @@ namespace MobileKit
 				return type == Type.Boolean;
 			}
 		}
-
 		public bool isNull
 		{
 			get
@@ -481,7 +459,6 @@ namespace MobileKit
 				return type == Type.Null;
 			}
 		}
-
 		public JSON this[string key]
 		{
 			get
@@ -506,7 +483,6 @@ namespace MobileKit
 				}
 			}
 		}
-
 		public JSON this[int index]
 		{
 			get
@@ -561,7 +537,6 @@ namespace MobileKit
 				}
 			}
 		}
-
 		public string stringValue
 		{
 			get
@@ -581,7 +556,6 @@ namespace MobileKit
 				rawValue = value;
 			}
 		}
-
 		public float floatValue
 		{
 			get
@@ -603,7 +577,6 @@ namespace MobileKit
 				rawValue = value.ToString();
 			}
 		}
-
 		public int intValue
 		{
 			get
@@ -625,7 +598,6 @@ namespace MobileKit
 				rawValue = value.ToString();
 			}
 		}
-
 		public long longValue
 		{
 			get
@@ -647,7 +619,6 @@ namespace MobileKit
 				rawValue = value.ToString();
 			}
 		}
-
 		public bool booleanValue
 		{
 			get
@@ -667,7 +638,6 @@ namespace MobileKit
 				rawValue = value ? "1" : "";
 			}
 		}
-
 		public int length
 		{
 			get
@@ -689,7 +659,6 @@ namespace MobileKit
 				}
 			}
 		}
-
 		public string[] keys
 		{
 			get
@@ -727,12 +696,10 @@ namespace MobileKit
 				}
 			}
 		}
-
 		public JSON Clone()
 		{
 			return Clone(this);
 		}
-
 		public IEnumerator<string> GetEnumerator()
 		{
 			if(!isObject)
@@ -744,12 +711,10 @@ namespace MobileKit
 				yield return key;
 			}
 		}
-
 		IEnumerator IEnumerable.GetEnumerator()
 		{
 			return GetEnumerator();
 		}
-
 		public JSON Get(string key, JSON fallback = null)
 		{
 			if(!HasKey(key))
@@ -758,7 +723,6 @@ namespace MobileKit
 			}
 			return this[key];
 		}
-
 		public JSON Get(int index, JSON fallback = null)
 		{
 			if(!HasKey(index))
@@ -767,7 +731,6 @@ namespace MobileKit
 			}
 			return this[index];
 		}
-
 		public JSON GetObject(int index)
 		{
 			if(!HasKey(index))
@@ -776,7 +739,6 @@ namespace MobileKit
 			}
 			return this[index];
 		}
-
 		public JSON GetObject(string key)
 		{
 			if(!HasKey(key))
@@ -785,7 +747,6 @@ namespace MobileKit
 			}
 			return this[key];
 		}
-
 		public string GetString(string key, string fallback = "")
 		{
 			if(!HasKey(key))
@@ -794,7 +755,6 @@ namespace MobileKit
 			}
 			return this[key].stringValue;
 		}
-
 		public string GetString(int index, string fallback = "")
 		{
 			if(!HasKey(index))
@@ -803,7 +763,6 @@ namespace MobileKit
 			}
 			return this[index].stringValue;
 		}
-
 		public bool HasKey(int index)
 		{
 			switch(type)
@@ -819,7 +778,6 @@ namespace MobileKit
 			}
 			throw new JSONException("Index mapping is available just for arrays and objects.");
 		}
-
 		public bool HasKey(string key)
 		{
 			if(!isObject)
@@ -828,7 +786,6 @@ namespace MobileKit
 			}
 			return dictionary.ContainsKey(key);
 		}
-
 		public int IndexOf(JSON item, int start = 0)
 		{
 			if(!isArray)
@@ -838,7 +795,6 @@ namespace MobileKit
 			start = Rotate(start);
 			return list.IndexOf(item, start);
 		}
-
 		public string Join(string separator = "")
 		{
 			if(!isArray)
@@ -858,7 +814,6 @@ namespace MobileKit
 			}
 			return join.ToString();
 		}
-
 		public JSON Pop()
 		{
 			if(!isArray)
@@ -870,7 +825,6 @@ namespace MobileKit
 			list.RemoveAt(index);
 			return item;
 		}
-
 		public int Push(params JSON[] items)
 		{
 			if(!isArray)
@@ -883,7 +837,6 @@ namespace MobileKit
 			}
 			return list.Count;
 		}
-
 		public JSON[] Reverse()
 		{
 			if(!isArray)
@@ -893,7 +846,6 @@ namespace MobileKit
 			list.Reverse();
 			return list.ToArray();
 		}
-
 		public JSON Shift()
 		{
 			if(!isArray)
@@ -904,7 +856,6 @@ namespace MobileKit
 			list.RemoveAt(0);
 			return item;
 		}
-
 		public JSON[] Slice(int start, int end = 0)
 		{
 			if(!isArray)
@@ -919,7 +870,6 @@ namespace MobileKit
 			}
 			return list.GetRange(start, end - start).ToArray();
 		}
-
 		public JSON[] Splice(int index, int count, params JSON[] items)
 		{
 			if(!isArray)
@@ -939,7 +889,6 @@ namespace MobileKit
 			}
 			return slice;
 		}
-
 		public JSON[] ToArray()
 		{
 			if(!isArray)
@@ -948,7 +897,6 @@ namespace MobileKit
 			}
 			return list.ToArray();
 		}
-
 		public int Unshift(params JSON[] items)
 		{
 			if(!isArray)
@@ -961,17 +909,14 @@ namespace MobileKit
 			}
 			return list.Count;
 		}
-
 		public override string ToString()
 		{
 			return Stringify(false);
 		}
-
 		public string ToString(bool pretty = false)
 		{
 			return Stringify(pretty);
 		}
-
 		private int Rotate(int index)
 		{
 			if(index < 0)
@@ -984,7 +929,6 @@ namespace MobileKit
 			}
 			return index;
 		}
-
 		private string Stringify(bool pretty, int level = 0)
 		{
 			switch(type)

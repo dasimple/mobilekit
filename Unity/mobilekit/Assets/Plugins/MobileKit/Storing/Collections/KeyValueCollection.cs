@@ -8,12 +8,10 @@ namespace MobileKit.Storing.Collections
 		{
 
 		}
-
 		public string Get(string name)
 		{
 			return Get(name, "value");
 		}
-
 		public bool Set(string name, string value)
 		{
 			if(Set(name, "value", value) == 0)
@@ -24,7 +22,6 @@ namespace MobileKit.Storing.Collections
 			}
 			return true;
 		}
-
 		protected override void AllocateColumns()
 		{
 			base.AllocateColumns();

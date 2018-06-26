@@ -11,7 +11,6 @@ namespace MobileKit.Storing
 				Add(entries[i], entries[i + 1]);
 			}
 		}
-
 		public StoreDictionary(JSON json)
 		{
 			if(json != null)
@@ -22,7 +21,6 @@ namespace MobileKit.Storing
 				}
 			}
 		}
-
 		public string Get(string key, string fallback = null)
 		{
 			if(ContainsKey(key))
@@ -31,28 +29,24 @@ namespace MobileKit.Storing
 			}
 			return fallback;
 		}
-
 		public int GetAsInt(string key, int fallback = 0)
 		{
 			int value = fallback;
 			int.TryParse(Get(key), out value);
 			return value;
 		}
-
 		public long GetAsLong(string key, long fallback = 0)
 		{
 			long value = fallback;
 			long.TryParse(Get(key), out value);
 			return value;
 		}
-
 		public float GetAsFloat(string key, float fallback = 0f)
 		{
 			float value = fallback;
 			float.TryParse(Get(key), out value);
 			return value;
 		}
-
 		public JSON ToJSON()
 		{
 			JSON json = new JSON(JSON.Type.Object);

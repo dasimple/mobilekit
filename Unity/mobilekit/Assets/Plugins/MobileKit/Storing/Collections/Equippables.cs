@@ -8,40 +8,39 @@ namespace MobileKit.Storing.Collections
 		public const string equippedColumn = "equipped";
 		public const string singleGroupValue = ".";
 		public const string noGroupValue = "-";
+		public const string ownedValue = "1";
 		public const string unequippedValue = "";
 		public const string equippedValue = "fck";
-
 		private Dictionary<string, string> cachedGroup = new Dictionary<string, string>(); //name -> group
 		private Dictionary<string, bool> cachedEquipped = new Dictionary<string, bool>(); //name -> equipped
-
 		public Equippables(string table) : base(table)
 		{
 			if(cachedGroup.Count <= 0 && cachedEquipped.Count <= 0)
 			{
 				StoreList columns = new StoreList(nameColumn, groupColumn, equippedColumn);
-				StoreDictionary[] records = GetMultiple(columns, null, -1);
+				IEnumerable<StoreDictionary> records = GetMultiple(columns, null, -1);
 				Cache(records);
 			}
 		}
-
-		public override int Add(StoreDictionary[] records)
+		public override int Add(IEnumerable<StoreDictionary> records)
 		{
 			Cache(records); //do a cache
 			return base.Add(records);
 		}
-
-		public virtual StoreDictionary Bake(string name, string group, bool equipped = false)
+		public virtual StoreDictionary Bake(string name, string group, bool owned, bool equipped)
 		{
 			StoreDictionary values = Bake(name);
 			values.Add(groupColumn, group);
-			if(equipped)
+			if(owned)
 			{
-				values.Add(balanceColumn, "1");
-				values.Add(equippedColumn, equippedValue);
+				values.Add(balanceColumn, ownedValue);
+				if(equipped)
+				{
+					values.Add(equippedColumn, equippedValue);
+				}
 			}
 			return values;
 		}
-
 		public virtual string GetGroup(string name)
 		{
 			if(!cachedGroup.ContainsKey(name))
@@ -51,7 +50,6 @@ namespace MobileKit.Storing.Collections
 			}
 			return cachedGroup[name];
 		}
-
 		public virtual bool IsEquipped(string name)
 		{
 			if(!cachedEquipped.ContainsKey(name))
@@ -61,7 +59,6 @@ namespace MobileKit.Storing.Collections
 			}
 			return cachedEquipped[name];
 		}
-
 		public virtual bool Equip(string name)
 		{
 			if(!IsOwned(name))
@@ -85,7 +82,6 @@ namespace MobileKit.Storing.Collections
 			}
 			return Set(name, equippedColumn, equippedValue) == 1;
 		}
-
 		public virtual bool Unequip(string name)
 		{
 			if(cachedEquipped.ContainsKey(name))
@@ -96,13 +92,11 @@ namespace MobileKit.Storing.Collections
 			}
 			return Set(name, equippedColumn, unequippedValue) == 1;
         }
-
 		public virtual bool ToggleEquip(string name)
 		{
 			bool equipped = IsEquipped(name);
 			return ToggleEquip(name, equipped);
 		}
-
 		public virtual bool ToggleEquip(string name, bool equipped)
 		{
 			if(equipped)
@@ -111,7 +105,6 @@ namespace MobileKit.Storing.Collections
 			}
 			return Unequip(name);
 		}
-
 		public virtual string GetEquipped(string group = singleGroupValue)
 		{
 			if(group != noGroupValue)
@@ -144,15 +137,13 @@ namespace MobileKit.Storing.Collections
 			}
 			return null;
 		}
-
 		protected override void AllocateColumns()
 		{
 			base.AllocateColumns();
 			columns.Add(groupColumn);
 			columns.Add(equippedColumn);
 		}
-
-		private void Cache(StoreDictionary[] records)
+		protected override void Cache(IEnumerable<StoreDictionary> records)
 		{
 			foreach(StoreDictionary record in records)
 			{

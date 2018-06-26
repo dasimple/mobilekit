@@ -21,42 +21,34 @@ namespace MobileKit.Billings.Platforms
 		private static extern void iosBilling_queryPurchaseHistory(string request);
 		[DllImport("__Internal")]
 		private static extern void iosBilling_purchase(string request, string payload);
-
 		public override void Connect()
 		{
 			iosBilling_connect();
 		}
-
 		public override void Disconnect()
 		{
 			iosBilling_disconnect();
 		}
-
 		public override void Refresh()
 		{
 			iosBilling_refresh();
 		}
-
 		public override bool CanMakePayments()
 		{
 			return iosBilling_canMakePayments();
 		}
-
 		public override void QueryProductsDetails(string request)
 		{
 			iosBilling_queryProductsDetails(request);
 		}
-
 		public override void QueryPurchases(string request)
 		{
 			iosBilling_queryPurchases(request);
 		}
-
 		public override void QueryPurchaseHistory(string request)
 		{
 			iosBilling_queryPurchaseHistory(request);
 		}
-
 		public override void Purchase(string request, string payload)
 		{
 			iosBilling_purchase(request, payload);

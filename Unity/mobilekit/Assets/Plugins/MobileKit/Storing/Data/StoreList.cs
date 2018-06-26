@@ -8,7 +8,6 @@ namespace MobileKit.Storing
 		{
 			AddRange(entries);
 		}
-
 		public StoreList(JSON json)
 		{
 			if(json != null)
@@ -19,7 +18,6 @@ namespace MobileKit.Storing
 				}
 			}
 		}
-
 		public JSON ToJSON()
 		{
 			JSON json = new JSON(JSON.Type.Array);

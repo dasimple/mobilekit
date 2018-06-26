@@ -7,49 +7,40 @@ namespace MobileKit.Storing.Platforms
 	public class PlatformAndroid : Platform
 	{
 		private AndroidJavaClass native = null;
-
 		public PlatformAndroid()
 		{
 			this.native = new AndroidJavaClass("com.dasimple.mobilekit.store.Store");
 		}
-
 		public override void Connect()
 		{
 			native.CallStatic("connect");
 		}
-
 		public override void Disconnect()
 		{
 			native.CallStatic("disconnect");
 		}
-
 		public override void Open(int version)
 		{
 			native.CallStatic("open", version);
 		}
-
 		public override void Close()
 		{
 			native.CallStatic("close");
 		}
-
 		public override bool Reset()
 		{
 			return native.CallStatic<bool>("reset");
         }
-
 		public override bool CreateCollection(string name, StoreList columns)
 		{
 			string columnsJSON = columns.ToJSON().ToString();
 			return native.CallStatic<bool>("createCollection", name, columnsJSON);
 		}
-
 		public override bool DestroyCollection(string name)
 		{
 			return native.CallStatic<bool>("destroyCollection", name);
 		}
-
-		public override int Add(string collection, StoreDictionary[] records)
+		public override int Add(string collection, IEnumerable<StoreDictionary> records)
 		{
 			JSON recordsArray = new JSON(JSON.Type.Array);
 			foreach(StoreDictionary record in records)
@@ -60,8 +51,7 @@ namespace MobileKit.Storing.Platforms
 			string recordsJSON = recordsArray.ToString();
 			return native.CallStatic<int>("add", collection, recordsJSON);
 		}
-
-		public override StoreDictionary[] Get(string collection, StoreList columns, StoreDictionary where, int limit)
+		public override IEnumerable<StoreDictionary> Get(string collection, StoreList columns, StoreDictionary where, int limit)
 		{
 			string columnsJSON = columns.ToJSON().ToString();
 			string whereJSON = where != null ? where.ToJSON().ToString() : "";
@@ -74,8 +64,7 @@ namespace MobileKit.Storing.Platforms
 			}
 			return records;
 		}
-
-		public override string[] Get(string collection, string column, StoreDictionary where, int limit)
+		public override IEnumerable<string> Get(string collection, string column, StoreDictionary where, int limit)
 		{
 			StoreList columns = new StoreList(column);
 			string columnsJSON = columns.ToJSON().ToString();
@@ -89,14 +78,12 @@ namespace MobileKit.Storing.Platforms
 			}
 			return records;
 		}
-
 		public override int Set(string collection, StoreDictionary values, StoreDictionary where)
 		{
 			string valuesJSON = values.ToJSON().ToString();
 			string whereJSON = where != null ? where.ToJSON().ToString() : "";
 			return native.CallStatic<int>("set", collection, valuesJSON, whereJSON);
 		}
-
 		public override int Remove(string collection, StoreDictionary where)
 		{
 			string whereJSON = where != null ? where.ToJSON().ToString() : "";

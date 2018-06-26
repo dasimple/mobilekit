@@ -12,7 +12,6 @@ namespace MobileKit.Billings
 		#elif UNITY_IOS
 		//Here goes iOS settings
 		#endif
-
 		public static UnityAction OnConnect = delegate {};
 		public static UnityAction<string> OnConnectFail = delegate {};
 		public static UnityAction OnDisconnect = delegate {};
@@ -22,10 +21,8 @@ namespace MobileKit.Billings
 		public static UnityAction OnPurchaseStart = delegate {};
 		public static UnityAction<string> OnPurchaseFail = delegate {};
 		public static UnityAction<string> OnPurchaseComplete = delegate {};
-
 		private static bool isInitialized = false;
 		private static Platform cachedPlatform = null;
-
 		public static Platform platform
 		{
 			get
@@ -48,42 +45,34 @@ namespace MobileKit.Billings
 				return cachedPlatform;
 			}
 		}
-
 		public static void Connect()
 		{
 			platform.Connect();
 		}
-
 		public static void Disconnect()
 		{
 			platform.Disconnect();
 		}
-
 		public static void Refresh()
 		{
 			platform.Refresh();
 		}
-
 		public static bool CanMakePayments()
 		{
 			return platform.CanMakePayments();
 		}
-
 		public static void QueryProductsDetails(string request)
 		{
 			platform.QueryProductsDetails(request);
 		}
-
 		public static void QueryPurchases(string request)
 		{
 			platform.QueryPurchases(request);
 		}
-
 		public static void QueryPurchaseHistory(string request)
 		{
 			platform.QueryPurchaseHistory(request);
 		}
-
 		public static void Purchase(string request, string payload)
 		{
 			platform.Purchase(request, payload);

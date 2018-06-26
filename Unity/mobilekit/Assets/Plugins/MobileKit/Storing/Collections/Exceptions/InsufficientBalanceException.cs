@@ -8,7 +8,6 @@ namespace MobileKit.Storing.Collections
 		{
 
 		}
-
 		public InsufficientBalanceException(string collection, long amount) : base("Insufficient balance to take " + amount + " from " + collection + ".")
 		{
 

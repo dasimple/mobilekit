@@ -1,4 +1,5 @@
 ﻿#if UNITY_IOS
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
 namespace MobileKit.Storing.Platforms
@@ -27,44 +28,36 @@ namespace MobileKit.Storing.Platforms
 		private static extern int iosStore_set(string collection, string values, string where);
 		[DllImport("__Internal")]
 		private static extern int iosStore_remove(string collection, string where);
-
 		public override void Connect()
 		{
 			iosStore_connect();
 		}
-
 		public override void Disconnect()
 		{
 			iosStore_disconnect();
 		}
-
 		public override void Open(int version)
 		{
 			iosStore_open(version);
 		}
-
 		public override void Close()
 		{
 			iosStore_close();
 		}
-
 		public override bool Reset()
 		{
 			return iosStore_reset();
 		}
-
 		public override bool CreateCollection(string name, StoreList columns)
 		{
 			string columnsJSON = columns.ToJSON().ToString();
 			return iosStore_createCollection(name, columnsJSON);
 		}
-
 		public override bool DestroyCollection(string name)
 		{
 			return iosStore_destroyCollection(name);
 		}
-
-		public override int Add(string collection, StoreDictionary[] records)
+		public override int Add(string collection, IEnumerable<StoreDictionary> records)
 		{
 			JSON recordsArray = new JSON(JSON.Type.Array);
 			foreach(StoreDictionary record in records)
@@ -75,8 +68,7 @@ namespace MobileKit.Storing.Platforms
 			string recordsJSON = recordsArray.ToString();
 			return iosStore_add(collection, recordsJSON);
 		}
-
-		public override StoreDictionary[] Get(string collection, StoreList columns, StoreDictionary where, int limit)
+		public override IEnumerable<StoreDictionary> Get(string collection, StoreList columns, StoreDictionary where, int limit)
 		{
 			string columnsJSON = columns.ToJSON().ToString();
 			string whereJSON = where != null ? where.ToJSON().ToString() : "";
@@ -91,8 +83,7 @@ namespace MobileKit.Storing.Platforms
 			}
 			return records;
 		}
-
-		public override string[] Get(string collection, string column, StoreDictionary where, int limit)
+		public override IEnumerable<string> Get(string collection, string column, StoreDictionary where, int limit)
 		{
 			StoreList columns = new StoreList(column);
 			string columnsJSON = columns.ToJSON().ToString();
@@ -108,14 +99,12 @@ namespace MobileKit.Storing.Platforms
 			}
 			return records;
 		}
-
 		public override int Set(string collection, StoreDictionary values, StoreDictionary where)
 		{
 			string valuesJSON = values.ToJSON().ToString();
 			string whereJSON = where != null ? where.ToJSON().ToString() : "";
 			return iosStore_set(collection, valuesJSON, whereJSON);
 		}
-
 		public override int Remove(string collection, StoreDictionary where)
 		{
 			string whereJSON = where != null ? where.ToJSON().ToString() : "";

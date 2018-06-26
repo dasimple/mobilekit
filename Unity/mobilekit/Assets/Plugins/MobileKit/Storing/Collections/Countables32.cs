@@ -5,31 +5,21 @@ namespace MobileKit.Storing.Collections
 	public abstract class Countables32 : Countables
 	{
 		private Dictionary<string, int> cachedBalance = new Dictionary<string, int>(); //name -> balance
-
 		public Countables32(string table) : base(table)
 		{
 			if(cachedBalance.Count <= 0)
 			{
 				StoreList columns = new StoreList(nameColumn, balanceColumn);
-				StoreDictionary[] records = GetMultiple(columns, null, -1);
+				IEnumerable<StoreDictionary> records = GetMultiple(columns, null, -1);
 				Cache(records);
 			}
 		}
-
-		public override int Add(StoreDictionary[] records)
-		{
-			GenerateProtection(); //this is becuase Add is called before constructor
-			Cache(records); //do a cache
-			return base.Add(records);
-		}
-
 		public StoreDictionary Bake(string name, int balance)
 		{
 			StoreDictionary values = Bake(name);
 			values.Add(balanceColumn, balance + "");
 			return values;
 		}
-
 		public virtual int GetBalance(string name)
 		{
 			if(!cachedBalance.ContainsKey(name))
@@ -39,7 +29,6 @@ namespace MobileKit.Storing.Collections
 			}
 			return cachedBalance[name] - protectionOffset;
 		}
-
 		public virtual bool SetBalance(string name, int value)
 		{
 			if(value < 0)
@@ -55,12 +44,10 @@ namespace MobileKit.Storing.Collections
 			}
 			return Set(name, balanceColumn, value + "") == 1;
 		}
-
 		public virtual bool CanGive(string name, int amount)
 		{
 			return true;
 		}
-
 		public virtual bool Give(string name, int amount)
 		{
 			if(amount >= 0)
@@ -71,12 +58,10 @@ namespace MobileKit.Storing.Collections
 			}
 			return false;
 		}
-
 		public virtual bool CanTake(string name, int amount)
 		{
 			return GetBalance(name) >= amount;
 		}
-
 		public virtual bool Take(string name, int amount)
 		{
 			if(amount >= 0)
@@ -91,8 +76,7 @@ namespace MobileKit.Storing.Collections
 			}
 			return false;
 		}
-
-		private void Cache(StoreDictionary[] records)
+		protected override void Cache(IEnumerable<StoreDictionary> records)
 		{
 			foreach(StoreDictionary record in records)
 			{

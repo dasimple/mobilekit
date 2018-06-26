@@ -5,33 +5,27 @@ namespace MobileKit.Storing.Collections
 	public abstract class Upgradables : Equippables
 	{
 		public const string levelColumn = "level";
-
-		//group -> level
-		private Dictionary<string, int> cachedLevel = new Dictionary<string, int>();
-
+		private Dictionary<string, int> cachedLevel = new Dictionary<string, int>(); //group -> level
 		public Upgradables(string table) : base(table)
 		{
 			if(cachedLevel.Count <= 0)
 			{
 				StoreList columns = new StoreList(nameColumn, groupColumn, equippedColumn, levelColumn);
-				StoreDictionary[] records = GetMultiple(columns, null, -1);
+				IEnumerable<StoreDictionary> records = GetMultiple(columns, null, -1);
 				Cache(records);
 			}
 		}
-
-		public override int Add(StoreDictionary[] records)
+		public override int Add(IEnumerable<StoreDictionary> records)
 		{
 			Cache(records); //do a cache
 			return base.Add(records);
 		}
-
-		public virtual StoreDictionary Bake(string name, string group, int level, bool equipped = false)
+		public virtual StoreDictionary Bake(string name, string group, int level, bool owned, bool equipped)
 		{
-			StoreDictionary values = Bake(name, group, equipped);
+			StoreDictionary values = Bake(name, group, owned, equipped);
 			values.Add(levelColumn, level + "");
 			return values;
 		}
-
 		public virtual int GetLevel(string name)
 		{
 			int level = GetAsInt(name, levelColumn, 0);
@@ -41,7 +35,6 @@ namespace MobileKit.Storing.Collections
 			}
 			return level;
 		}
-
 		public virtual int GetLevelOfGroup(string group)
 		{
 			if(group == noGroupValue)
@@ -60,7 +53,6 @@ namespace MobileKit.Storing.Collections
 			}
 			return cachedLevel[group];
 		}
-
 		public virtual bool SetLevelOfGroup(string group, int level)
 		{
 			if(group != noGroupValue)
@@ -86,26 +78,22 @@ namespace MobileKit.Storing.Collections
             }
 			return false;
         }
-
 		public virtual bool IncreaseLevelOfGroup(string group)
 		{
 			int level = GetLevelOfGroup(group);
 			return SetLevelOfGroup(group, ++level);
 		}
-
 		public virtual bool DecreaseLevelOfGroup(string group)
 		{
 			int level = GetLevelOfGroup(group);
 			return SetLevelOfGroup(group, --level);
 		}
-
 		protected override void AllocateColumns()
 		{
 			base.AllocateColumns();
 			this.columns.Add(levelColumn);
 		}
-
-		private void Cache(StoreDictionary[] records)
+		protected override void Cache(IEnumerable<StoreDictionary> records)
 		{
 			foreach(StoreDictionary record in records)
 			{

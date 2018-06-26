@@ -10,12 +10,10 @@ namespace MobileKit.Storing.Platforms
 		{
 			StoreEvents.Connect();
 		}
-
 		public override void Disconnect()
 		{
 			StoreEvents.Disconnect();
 		}
-
 		public override void Open(int version)
 		{
 			int currentVersion = 0;
@@ -37,12 +35,10 @@ namespace MobileKit.Storing.Platforms
 			Set("meta.version", version + "");
 			StoreEvents.DatabaseOpen();
 		}
-
 		public override void Close()
 		{
 
 		}
-
 		public override bool Reset()
 		{
 			JSON collections = GetCollections();
@@ -54,7 +50,6 @@ namespace MobileKit.Storing.Platforms
 			Delete("collections");
 			return true;
 		}
-
 		public override bool CreateCollection(string name, StoreList columns)
 		{
 			if(CollectionExists(name))
@@ -67,7 +62,6 @@ namespace MobileKit.Storing.Platforms
 			Set("meta.collections." + name, columnsJSON);
 			return true;
 		}
-
 		public override bool DestroyCollection(string name)
 		{
 			if(!CollectionExists(name))
@@ -85,8 +79,7 @@ namespace MobileKit.Storing.Platforms
 			Delete("meta.collections." + name);
 			return true;
 		}
-
-		public override int Add(string collection, StoreDictionary[] records)
+		public override int Add(string collection, IEnumerable<StoreDictionary> records)
 		{
 			int length = 0;
 			foreach(StoreDictionary record in records)
@@ -107,8 +100,7 @@ namespace MobileKit.Storing.Platforms
 			}
 			return length;
 		}
-
-		public override StoreDictionary[] Get(string collection, StoreList columns, StoreDictionary where, int limit)
+		public override IEnumerable<StoreDictionary> Get(string collection, StoreList columns, StoreDictionary where, int limit)
 		{
 			List<StoreDictionary> records = new List<StoreDictionary>();
 			JSON names = GetRecords(collection);
@@ -131,10 +123,9 @@ namespace MobileKit.Storing.Platforms
 					limit--;
 				}
 			}
-			return records.ToArray();
+			return records;
 		}
-
-		public override string[] Get(string collection, string column, StoreDictionary where, int limit)
+		public override IEnumerable<string> Get(string collection, string column, StoreDictionary where, int limit)
 		{
 			StoreList records = new StoreList();
 			JSON names = GetRecords(collection);
@@ -152,9 +143,8 @@ namespace MobileKit.Storing.Platforms
 					limit--;
 				}
 			}
-			return records.ToArray();
+			return records;
 		}
-
 		public override int Set(string collection, StoreDictionary values, StoreDictionary where)
 		{
 			int affected = 0;
@@ -175,7 +165,6 @@ namespace MobileKit.Storing.Platforms
 			}
 			return affected;
 		}
-
 		public override int Remove(string collection, StoreDictionary where)
 		{
 			int affected = 0;
@@ -196,7 +185,6 @@ namespace MobileKit.Storing.Platforms
 			}
 			return affected;
 		}
-
 		private bool IsRecordIncluded(string collection, string name, StoreDictionary where)
 		{
 			if(where != null)
@@ -213,33 +201,27 @@ namespace MobileKit.Storing.Platforms
 			}
 			return true;
 		}
-
 		private bool Has(string key)
 		{
 			return PlayerPrefs.HasKey("store." + key);
 		}
-
 		private void Set(string key, string value)
 		{
 			PlayerPrefs.SetString("store." + key, value);
 		}
-
 		private string Get(string key, string defaultValue = "")
 		{
 			return PlayerPrefs.GetString("store." + key, defaultValue);
 		}
-
 		private void Delete(string key)
 		{
 			PlayerPrefs.DeleteKey("store." + key);
 		}
-
 		private JSON GetCollections()
 		{
 			string collections = Get("collections", "[]");
 			return JSON.Parse(collections);
 		}
-
 		private bool CollectionExists(string name)
 		{
 			JSON collections = GetCollections();
@@ -253,19 +235,16 @@ namespace MobileKit.Storing.Platforms
 			}
 			return false;
 		}
-
 		private void SetCollections(JSON collections)
 		{
 			Set("collections", collections + "");
 		}
-
 		private void AddCollection(string name)
 		{
 			JSON collections = GetCollections();
 			collections.Push(name);
 			SetCollections(collections);
 		}
-
 		private void RemoveCollection(string name)
 		{
 			JSON collections = GetCollections();
@@ -280,13 +259,11 @@ namespace MobileKit.Storing.Platforms
 			}
 			SetCollections(collections);
 		}
-
 		private JSON GetRecords(string collection)
 		{
 			string records = Get("collections." + collection, "[]");
 			return JSON.Parse(records);
 		}
-
 		private bool RecordExists(string collection, string name)
 		{
 			JSON records = GetRecords(collection);
@@ -300,19 +277,16 @@ namespace MobileKit.Storing.Platforms
 			}
 			return false;
 		}
-
 		private void SetRecords(string collection, JSON records)
 		{
 			Set("collections." + collection, records + "");
 		}
-
 		private void AddRecord(string collection, string name)
 		{
 			JSON records = GetRecords(collection);
 			records.Push(name);
 			SetRecords(collection, records);
 		}
-
 		private void RemoveRecord(string collection, string name)
 		{
 			JSON records = GetRecords(collection);
