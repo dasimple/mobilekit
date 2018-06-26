@@ -143,7 +143,7 @@ namespace MobileKit.Storing.Collections
 			columns.Add(groupColumn);
 			columns.Add(equippedColumn);
 		}
-		protected override void Cache(IEnumerable<StoreDictionary> records)
+		private void Cache(IEnumerable<StoreDictionary> records)
 		{
 			foreach(StoreDictionary record in records)
 			{

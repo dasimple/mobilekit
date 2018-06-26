@@ -93,7 +93,7 @@ namespace MobileKit.Storing.Collections
 			base.AllocateColumns();
 			this.columns.Add(levelColumn);
 		}
-		protected override void Cache(IEnumerable<StoreDictionary> records)
+		private void Cache(IEnumerable<StoreDictionary> records)
 		{
 			foreach(StoreDictionary record in records)
 			{

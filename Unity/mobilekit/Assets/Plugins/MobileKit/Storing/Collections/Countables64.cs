@@ -14,6 +14,12 @@ namespace MobileKit.Storing.Collections
 				Cache(records);
 			}
 		}
+		public override int Add(IEnumerable<StoreDictionary> records)
+		{
+			GenerateProtection(); //this is becuase Add is called before constructor
+			Cache(records); //do a cache
+			return base.Add(records);
+		}
 		public StoreDictionary Bake(string name, long balance)
 		{
 			StoreDictionary values = Bake(name);
@@ -76,7 +82,7 @@ namespace MobileKit.Storing.Collections
 			}
 			return false;
 		}
-		protected override void Cache(IEnumerable<StoreDictionary> records)
+		private void Cache(IEnumerable<StoreDictionary> records)
 		{
 			foreach(StoreDictionary record in records)
 			{

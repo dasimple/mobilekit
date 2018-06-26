@@ -10,16 +10,6 @@ namespace MobileKit.Storing.Collections
 		{
 			GenerateProtection();
 		}
-		public override int Add(IEnumerable<StoreDictionary> records)
-		{
-			GenerateProtection(); //this is becuase Add is called before constructor
-			Cache(records); //do a cache
-			return base.Add(records);
-		}
-		protected virtual void Cache(IEnumerable<StoreDictionary> records)
-		{
-			
-		}
 		protected void GenerateProtection()
 		{
 			if(protectionOffset == 0)
