@@ -91,7 +91,7 @@ namespace MobileKit.Storing.Collections
 				cachedEquipped.Add(name, false);
 			}
 			return Set(name, equippedColumn, unequippedValue) == 1;
-        }
+		}
 		public virtual bool ToggleEquip(string name)
 		{
 			bool equipped = IsEquipped(name);

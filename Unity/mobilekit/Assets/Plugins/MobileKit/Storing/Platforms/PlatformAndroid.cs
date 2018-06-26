@@ -30,7 +30,7 @@ namespace MobileKit.Storing.Platforms
 		public override bool Reset()
 		{
 			return native.CallStatic<bool>("reset");
-        }
+		}
 		public override bool CreateCollection(string name, StoreList columns)
 		{
 			string columnsJSON = columns.ToJSON().ToString();

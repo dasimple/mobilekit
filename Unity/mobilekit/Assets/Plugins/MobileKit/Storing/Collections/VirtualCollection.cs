@@ -17,9 +17,9 @@ namespace MobileKit.Storing.Collections
 		{
 			return Store.Add(table, records);
 		}
-		public virtual int Add(params StoreDictionary[] records)
+		public virtual int Add(StoreDictionary record)
 		{
-			return Add(records);
+			return Add(new StoreDictionary[] { record });
 		}
 		public virtual StoreDictionary Bake(string name)
 		{

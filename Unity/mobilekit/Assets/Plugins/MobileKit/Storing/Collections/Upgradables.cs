@@ -75,9 +75,9 @@ namespace MobileKit.Storing.Collections
 					cachedLevel.Add(group, level);
 				}
 				return Set(columns, where) == 1;
-            }
+			}
 			return false;
-        }
+		}
 		public virtual bool IncreaseLevelOfGroup(string group)
 		{
 			int level = GetLevelOfGroup(group);
@@ -113,5 +113,5 @@ namespace MobileKit.Storing.Collections
 				}
 			}
 		}
-    }
+	}
 }

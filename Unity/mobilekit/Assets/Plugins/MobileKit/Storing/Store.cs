@@ -85,5 +85,5 @@ namespace MobileKit.Storing
 		{
 			return platform.Remove(collection, where);
 		}
-    }
+	}
 }
